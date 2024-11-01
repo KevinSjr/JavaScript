@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script>
+        let num1, num2;
+
+        function atualizarValores() {
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+        }
+    </script>
+    <style>
+.container {
+    text-align: left;
+    padding: 5px;
+    width: 440px;
+    height: 375px;
+    border: 7px solid orange; 
+    box-shadow: inset 0 0 0 8px gray; 
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 1px;
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+input[type="number"] {
+    width: 280px; 
+    height: 23px; 
+    margin-left: 20px;
+}
+.buttons{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+#resultado {margin-left: 8px;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+button{
+   font-size: 22px;
+}
+    </style>
+</head>
+<body>
+    <center>
+    <div class="container">
+        <h1>Minha Calculadora</h1>
+        <br>
+        <label for="num1">Primeiro Número</label>
+        <input type="number" id="num1"  oninput="atualizarValores()">
+
+        <label for="num2">Segundo Número</label>
+        <input type="number" id="num2"  oninput="atualizarValores()">
+      
+        <div class="buttons">
+            <button onclick="document.getElementById('resultado').innerText = 'O resultado é ' + (num1 + num2)">Soma</button>
+            <button onclick="document.getElementById('resultado').innerText = 'O resultado é ' + (num1 - num2)">Subtrair</button>
+            <button onclick="document.getElementById('resultado').innerText = 'O resultado é ' + (num1 * num2)">Multiplicar</button>
+            <button onclick="document.getElementById('resultado').innerText =  'O resultado é ' + (num1 / num2) ">Dividir</button>
+        </div>
+        <p id="resultado">O Resultado é</p>
+    </div>
+    </center>
+</body>
+</html>
